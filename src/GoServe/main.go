@@ -26,16 +26,19 @@ var version		string	= "1.0.0"
 
 
 func webHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Print("\n")
-	fmt.Print("function webHandler triggered: [URL]")
-	//fmt.Print("\n")
-	
-    fmt.Fprintf(w, "Hi there, I love %s!", r.URL.Path[1:])
-    
-    p1 := &Pages{Title: "TestPage", Body: []byte("This is a sample Page.")}
-    p1.save()
-    p2, _ := loadPage("TestPage")
-    fmt.Println(string(p2.Body))
+	pageRequested := r.URL.Path[1:]
+	if pageRequested != "favicon.ico" {
+		//fmt.Print("\n")
+		fmt.Print("function webHandler triggered: ", pageRequested)
+		//fmt.Print("\n")
+		
+	    fmt.Fprintf(w, "Hi there, I love %s!", pageRequested)
+	    
+	    p1 := &Pages{Title: "test", Body: []byte("This is a sample page for: "+pageRequested)}
+	    p1.save()
+	    p2, _ := loadPage("test")
+	    fmt.Println(string(p2.Body))
+	}
 }
 
 

@@ -5,6 +5,24 @@ GoServe (CURRENTLY IN DEV)
 
 GoServe! is a simple static website server that is standalone and enables quick website deployment and serving.
 
+Features
+--------
+
+ * Multiple Domains:
+   * Multiple domains pointed to same application instance supported
+ * Administration:
+   * Console Controls:
+ 	 * Full console controlling and monitoring on all platforms (Unix/Linux/Windows)
+   * Form based creation of all template and page data
+ * Pages:
+   * Pages support .txt, .html, and .md
+   * Dynamic translation of .txt to HTML and .md to HTML
+ * Templates:
+   * Templates following Go standards
+   * Templates selectable per domain
+ * HTTPS:
+   * HTTPS SSL with placeholder certificate
+
 External Libraries
 ------------------
 

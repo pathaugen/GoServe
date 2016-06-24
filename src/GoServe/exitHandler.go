@@ -12,7 +12,7 @@ import (
 
 
 func exitHandler() {
-	fmt.Print("\n\n")
+	//fmt.Print("\n")
 	fmt.Print("Application is exiting. Press [enter] to continue.")
 	fmt.Print("\n\n")
 	fmt.Print("[exiting] > ")

@@ -114,6 +114,7 @@ func main() {
     // Can have multiple servers on different ports by duplicating this code
     server1 := http.NewServeMux()
     server1.HandleFunc("/", webHandler)
+    server1.HandleFunc("/api/", apiHandler)
     go func() {
 		http.ListenAndServe(":"+port, server1)
     }()

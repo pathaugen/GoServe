@@ -4,40 +4,50 @@ package main
 
 
 import (
+	"os"
 	"io/ioutil"
 )
 
 
 
 type Domains struct {
+	Domain		string
 	Title		string
-	Url			string
 	Template	string
 }
 
 
 type Templates struct {
-	//Domain	string
+	Domain		string
 	Title		string
 	Body		[]byte
 }
 
 
 type Pages struct {
-	//Domain	string
-	Title		string
+	//Domain		string
+	Url			string
+	//Title		string
 	Body		[]byte
 }
 func (p *Pages) save() error {
-	filename := p.Title + ".txt" // .html, .txt, or .md options
-	return ioutil.WriteFile(filename, p.Body, 0600)
+	//filename := p.Title + ".txt" // .html, .txt, or .md options
+	//filename := p.Url
+	filename := urlToFilename(p.Url)+".txt"
+	if !pathExists("resources/") {
+		// Announce that the resources/ folder does not exist
+		os.MkdirAll("resources/", os.ModePerm)
+		// Announce success that resources folder was created
+	}
+	return ioutil.WriteFile("resources/"+filename, p.Body, 0600)
 }
-func loadPage(title string) (*Pages, error) {
-	filename := title + ".txt" // .html, .txt, or .md options
-	body, err := ioutil.ReadFile(filename)
+func loadPage(url string) (*Pages, error) {
+	//filename := title + ".txt" // .html, .txt, or .md options
+	filename := url
+	body, err := ioutil.ReadFile("resources/"+filename)
 	if err != nil {
 	    return nil, err
 	}
-	return &Pages{Title: title, Body: body}, nil
+	return &Pages{Url: url, Body: body}, nil
 }
 

@@ -23,23 +23,8 @@ import (
 
 var exit		bool	= false
 var version		string	= "1.0.0"
-
-
-func webHandler(w http.ResponseWriter, r *http.Request) {
-	pageRequested := r.URL.Path[1:]
-	if pageRequested != "favicon.ico" {
-		//fmt.Print("\n")
-		fmt.Print("function webHandler triggered: ", pageRequested)
-		//fmt.Print("\n")
-		
-	    fmt.Fprintf(w, "Hi there, I love %s!", pageRequested)
-	    
-	    p1 := &Pages{Title: "test", Body: []byte("This is a sample page for: "+pageRequested)}
-	    p1.save()
-	    p2, _ := loadPage("test")
-	    fmt.Println(string(p2.Body))
-	}
-}
+var monitoring	bool	= false		// Console based traffic monitoring switch (configured via flag or console)
+var port		string	= "8080"	// Port to serve web requests on (configured via flag or console)
 
 
 func main() {
@@ -90,20 +75,23 @@ func main() {
 	
 	
 	
-	fmt.Print("Starting Webserver on port 8080.. please wait..")
+	fmt.Print("Starting Webserver on port "+port+".. please wait..")
 	fmt.Print("\n")
 	//http.HandleFunc("/", handler)
     //http.ListenAndServe(":8080", nil)
-    server8080 := http.NewServeMux()
-    server8080.HandleFunc("/", webHandler)
+    
+    // Can have multiple servers on different ports by duplicating this code
+    server1 := http.NewServeMux()
+    server1.HandleFunc("/", webHandler)
     go func() {
-		http.ListenAndServe(":8080", server8080)
+		http.ListenAndServe(":"+port, server1)
     }()
+    
     fmt.Fprintf(consoleColor, "\x1b[32m\x1b[1m") // Green, bold
-	fmt.Print("SUCCESS: Webserver STARTED on port 8080")
+	fmt.Print("SUCCESS: Webserver STARTED on port "+port)
 	fmt.Fprintf(consoleColor, "\x1b[0m") // Reset colors, bold
 	fmt.Print("\n")
-	fmt.Print("Visit: http://localhost:8080")
+	fmt.Print("Visit: http://localhost:"+port)
 	fmt.Print("\n\n")
 	
 	

@@ -20,10 +20,12 @@ func inputHandler() {
 	consoleColor := ansicolor.NewAnsiColorWriter(os.Stdout) // Initialize Windows 10 console coloring
 	
 	// Command prompt
-	//fmt.Print("Enter a command ('exit' to exit) > ")
-	fmt.Fprintf(consoleColor, "\x1b[33m\x1b[1m") // Yellow, bold
-	fmt.Print("GoServe! [DATETIME] > ")
-	fmt.Fprintf(consoleColor, "\x1b[0m") // Reset colors, bold
+	if !monitoring {
+		//fmt.Print("Enter a command ('exit' to exit) > ")
+		fmt.Fprintf(consoleColor, "\x1b[33m\x1b[1m") // Yellow, bold
+		fmt.Print("GoServe! [DATETIME] > ")
+		fmt.Fprintf(consoleColor, "\x1b[0m") // Reset colors, bold
+	}
 	
 	input, err := consolereader.ReadString('\n')
 	if err != nil {
@@ -35,9 +37,24 @@ func inputHandler() {
 	// TODO: Strip '/', '-', '- ' off the start of the string: /help, -help, etc.
 	
 	if input == "" {
-		//fmt.Print("\n")
-		fmt.Print("Command not found. 'help' for a list of commands.")
-		fmt.Print("\n\n")
+		if !monitoring {
+			//fmt.Print("\n")
+			fmt.Fprintf(consoleColor, "\x1b[31m\x1b[1m") // Red, bold
+			fmt.Print("Command not found.")
+			fmt.Fprintf(consoleColor, "\x1b[0m") // Reset colors, bold
+			fmt.Print(" 'help' for a list of commands.")
+			fmt.Print("\n\n")
+		} else {
+			fmt.Print("GoServe! Web Traffic Monitoring STOPPING..")
+			fmt.Print("\n")
+			
+			monitoring = false
+			
+			fmt.Fprintf(consoleColor, "\x1b[31m\x1b[1m") // Red, bold
+			fmt.Print("GoServe! Web Traffic Monitoring STOPPED.")
+			fmt.Fprintf(consoleColor, "\x1b[0m") // Reset colors, bold
+			fmt.Print("\n\n")
+		}
 	} else if input == "exit" {
 		exit = true
 	} else if input == "help" || input == "?" {
@@ -47,7 +64,13 @@ func inputHandler() {
 	} else if input == "monitor" {
 		fmt.Print("GoServe! Web Traffic Monitoring STARTING..")
 		fmt.Print("\n")
-		fmt.Print("(Press [ENTER] at any time to stop monitoring)")
+		
+		monitoring = true
+		
+		fmt.Fprintf(consoleColor, "\x1b[32m\x1b[1m") // Green, bold
+		fmt.Print("GoServe! Web Traffic Monitoring STARTED.")
+		fmt.Fprintf(consoleColor, "\x1b[0m") // Reset colors, bold
+		fmt.Print(" (Press [ENTER] at any time to stop monitoring)")
 		fmt.Print("\n\n")
 	} else {
 		//fmt.Print("\n")

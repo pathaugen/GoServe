@@ -29,6 +29,7 @@ type Pages struct {
 	Url			string
 	//Title		string
 	Body		[]byte
+	Css			[]byte
 }
 func (p *Pages) save() error {
 	//filename := p.Title + ".txt" // .html, .txt, or .md options

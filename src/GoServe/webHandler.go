@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"net/http"
 	//"regexp"
-	"strings"
+	//"strings"
 )
 
 
@@ -21,56 +21,21 @@ func webHandler(w http.ResponseWriter, r *http.Request) {
 			fmt.Print("\n")
 		}
 		
-	    fmt.Fprintf(w, "<p>Hi there, I love %s!</p>", pageRequested)
-	    fmt.Fprintf(w, "<p>THIS IS A SECOND LINE</p>")
-	    fmt.Fprintf(w, "<p>%s</p>", urlToFilename(pageRequested))
+	    fmt.Fprintf(w, "<h1>URL Requested</h1><p>URL Requested: %s!</p>", pageRequested)
+	    fmt.Fprintf(w, "<h1>URL To Filename</h1><p>%s</p>", urlToFilename(pageRequested))
 	    
 	    
-	    p1 := &Pages{Url: pageRequested, Body: []byte("This is a sample page for: "+pageRequested)}
-	    p1.save()
+	    // Attempt to load page
+	    pageLoaded, _ := loadPage(urlToFilename(pageRequested)+".txt")
+	    if pageLoaded == nil {
+	    	// Create Page
+	    	fmt.Fprintf(w, createPage(pageRequested))
+	    } else {
+		    //fmt.Println(string(p2.Body))
+		    fmt.Fprintf(w, "<h1>loadPage</h1><div>%s</div>", string(pageLoaded.Body))
+	    }
 	    
-	    p2, _ := loadPage(urlToFilename(pageRequested)+".txt")
-	    //fmt.Println(string(p2.Body))
-	    fmt.Fprintf(w, string(p2.Body))
 	    
 	}
-}
-
-
-func urlToFilename(input string) (string) {
-	/*
-	//re, err := regexp.Compile(`img.*?src=\"(.*?)\.(.*?)\"`)
-	re, err := regexp.Compile(`img.*?src=\"(.*?)\.(.*?)\"`) // parentfolder/subfolder/file.ext
-	if err != nil {
-		//return "", err
-		return ""
-	}
-	indexes := re.FindAllStringSubmatchIndex(input, -1)
-	
-	output := input
-	for _, match := range indexes {
-		imgStart := match[2]
-		imgEnd := match[3]
-		newImgName := strings.Replace(input[imgStart:imgEnd], "m", "a", -1)
-		output = output[:imgStart] + newImgName + input[imgEnd:]
-	}
-	return output //, nil
-	*/
-	
-	longFilenameArr := strings.Split(input, ".")
-	longFilename := strings.Replace(longFilenameArr[0], "/", "--", -1)
-	
-	/*
-	arr := strings.Split(input, "/") // Array of all parts of input
-	filename := arr[len(arr)-1] // Last part of array
-	*/
-	
-	/*
-	filearr := strings.Split(filename, ".")
-	file := filearr[0]
-	ext := filearr[len(arr)-1]
-	*/
-	
-	return longFilename
 }
 

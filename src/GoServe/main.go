@@ -32,12 +32,6 @@ var port		string	= "8080"	// Port to serve web requests on (configured via flag 
 
 func main() {
 	
-	/*
-	fmt.Print("\n\n")
-	fmt.Print(color.RedString("This is a test of Color"))
-	fmt.Print("\n\n")
-	*/
-	
 	consoleColor := ansicolor.NewAnsiColorWriter(os.Stdout) // Initialize Windows 10 console coloring
 	/*
 	text := "%sforeground %sbold%s %sbackground%s\n"
@@ -50,25 +44,18 @@ func main() {
 	fmt.Fprintf(w, text, "\x1b[37m", "\x1b[1m", "\x1b[21m", "\x1b[47;30m", "\x1b[0m") // White
 	*/
 	
-	//logrus.SetFormatter(&logrus.TextFormatter{ForceColors: true})
-	//logrus.SetOutput(colorable.NewColorableStdout())
-	
 	// ========== ========== ========== ========== ==========
 	// Splash Screen
 	// http://patorjk.com/software/taag/#p=display&v=1&f=Big&t=GoServe!
-	//fmt.Print(color.RedString("   _____       _____                     _"), "\n")
-	//logrus.Info("   _____       _____                     _")
-	//fmt.Print("\n")
-	//fmt.Print("\x1b[31m", "   _____       _____                     _", "\n")
-	//fmt.Print(uint16(0x0004 | 0x0000), "31", "   _____       _____                     _", "\n")
-	//fmt.Print("^[[31m", "   _____       _____                     _", "\n")
 	fmt.Fprintf(consoleColor, "\x1b[36m\x1b[1m") // Cyan, bold
-	fmt.Print("   _____       _____                     _", "\n")
-	fmt.Print("  / ____|     / ____|                   | |", "\n")
-	fmt.Print(" | |  __  ___| (___   ___ _ ____   _____| |", "\n")
-	fmt.Print(" | | |_ |/ _ \\\\___ \\ / _ \\ '__\\ \\ / / _ \\ |", "\n")
-	fmt.Print(" | |__| | (_) |___) |  __/ |   \\ V /  __/_|", "\n")
-	fmt.Print("  \\_____|\\___/_____/ \\___|_|    \\_/ \\___(_)")
+	asciiLogo := `
+   _____       _____                     _
+  / ____|     / ____|                   | |
+ | |  __  ___| (___   ___ _ ____   _____| |
+ | | |_ |/ _ \\___ \ / _ \ '__\ \ / / _ \ |
+ | |__| | (_) |___) |  __/ |   \ V /  __/_|
+  \_____|\___/_____/ \___|_|    \_/ \___(_)`
+	fmt.Print(asciiLogo)
 	fmt.Fprintf(consoleColor, "\x1b[0m") // Reset colors, bold
 	fmt.Print("\n\n")
 	fmt.Print("Version : ", version)

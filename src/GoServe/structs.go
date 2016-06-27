@@ -34,8 +34,8 @@ type Pages struct {
 func (p *Pages) save() error {
 	//filename := p.Title + ".txt" // .html, .txt, or .md options
 	//filename := p.Url
-	filename := urlToFilename(p.Url)+".txt"
-	if !pathExists("resources/") {
+	filename := convUrlToFilename(p.Url)+".txt"
+	if !checkPathExists("resources/") {
 		// Announce that the resources/ folder does not exist
 		os.MkdirAll("resources/", os.ModePerm)
 		// Announce success that resources folder was created

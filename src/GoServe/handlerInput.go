@@ -13,7 +13,7 @@ import (
 )
 
 
-func inputHandler() {
+func handlerInput() {
 	
 	consolereader := bufio.NewReader(os.Stdin)
 	

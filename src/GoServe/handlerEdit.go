@@ -8,7 +8,7 @@ import (
 )
 
 
-func editHandler() (bool) {
+func handlerEdit() (bool) {
 	return false
 }
 

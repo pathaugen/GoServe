@@ -9,7 +9,7 @@ import (
 )
 
 
-func urlToFilename(input string) (string) {
+func convUrlToFilename(input string) (string) {
 	/*
 	//re, err := regexp.Compile(`img.*?src=\"(.*?)\.(.*?)\"`)
 	re, err := regexp.Compile(`img.*?src=\"(.*?)\.(.*?)\"`) // parentfolder/subfolder/file.ext

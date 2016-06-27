@@ -9,7 +9,7 @@ import (
 )
 
 
-func pathExists(path string) (bool) { //(bool, error)
+func checkPathExists(path string) (bool) { //(bool, error)
 	_, err := os.Stat(path)
 	if err == nil {
 		return true//, nil

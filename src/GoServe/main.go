@@ -63,12 +63,21 @@ func main() {
 	//fmt.Print(uint16(0x0004 | 0x0000), "31", "   _____       _____                     _", "\n")
 	//fmt.Print("^[[31m", "   _____       _____                     _", "\n")
 	fmt.Fprintf(consoleColor, "\x1b[36m\x1b[1m") // Cyan, bold
+	asciiLogo := `   _____       _____                     _
+  / ____|     / ____|                   | |
+ | |  __  ___| (___   ___ _ ____   _____| |
+ | | |_ |/ _ \\___ \ / _ \ '__\ \ / / _ \ |
+ | |__| | (_) |___) |  __/ |   \ V /  __/_|
+  \_____|\___/_____/ \___|_|    \_/ \___(_)`
+	fmt.Print(asciiLogo)
+	/*
 	fmt.Print("   _____       _____                     _", "\n")
 	fmt.Print("  / ____|     / ____|                   | |", "\n")
 	fmt.Print(" | |  __  ___| (___   ___ _ ____   _____| |", "\n")
 	fmt.Print(" | | |_ |/ _ \\\\___ \\ / _ \\ '__\\ \\ / / _ \\ |", "\n")
 	fmt.Print(" | |__| | (_) |___) |  __/ |   \\ V /  __/_|", "\n")
 	fmt.Print("  \\_____|\\___/_____/ \\___|_|    \\_/ \\___(_)")
+	*/
 	fmt.Fprintf(consoleColor, "\x1b[0m") // Reset colors, bold
 	fmt.Print("\n\n")
 	fmt.Print("Version : ", version)

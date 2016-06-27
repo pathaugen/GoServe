@@ -9,6 +9,15 @@ import (
 
 
 func templateFramework() (string) {
-	return ""
+	template := `
+<html>
+	<head>
+	</head>
+	<body>
+		<div>
+		</div>
+	</body>
+</html>`
+	return template
 }
 

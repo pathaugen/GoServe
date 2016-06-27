@@ -34,21 +34,27 @@ func handlerWeb(w http.ResponseWriter, r *http.Request) {
 			fmt.Print("\n")
 		}
 		
-	    fmt.Fprintf(w, "<h1>URL Requested</h1><p>URL Requested: %s!</p>", pageRequested)
-	    fmt.Fprintf(w, "<h1>URL To Filename</h1><p>%s</p>", convUrlToFilename(pageRequested))
+		
+	    //fmt.Fprintf(w, "<h1>URL Requested</h1><p>URL Requested: %s!</p>", pageRequested)
+	    //fmt.Fprintf(w, "<h1>URL To Filename</h1><p>%s</p>", convUrlToFilename(pageRequested))
 	    
 	    
 	    // Attempt to load page
 	    pageLoaded, _ := loadPage(convUrlToFilename(pageRequested)+".txt")
 	    if pageLoaded == nil { // If page does not exist (can not be loaded)
-	    	// Create Page
-	    	fmt.Fprintf(w, createPage(pageRequested))
-	    	
-	    	// Display page or edit page
-	    	
-	    	// RE-attempt load page after creation
-		    pageLoaded, _ := loadPage(convUrlToFilename(pageRequested)+".txt")
-	    	fmt.Fprintf(w, "<h1>loadPage</h1><div>%s</div>", string(pageLoaded.Body))
+		    // if extension is on the URL, strip it
+		    if extension != "" {
+				http.Redirect(w, r, "/"+extensionArr[0], http.StatusFound) // Redirect to URL without extension
+		    } else {
+		    	// Create Page
+		    	fmt.Fprintf(w, createPage(pageRequested))
+		    	
+		    	// Display page or edit page
+		    	
+		    	// RE-attempt load page after creation
+			    pageLoaded, _ := loadPage(convUrlToFilename(pageRequested)+".txt")
+		    	fmt.Fprintf(w, "<h1>loadPage</h1><div>%s</div>", string(pageLoaded.Body))
+		    }
 	    } else {
 	    	// Display page or edit page
 	    	

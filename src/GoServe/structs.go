@@ -47,7 +47,7 @@ func loadPage(url string) (*Pages, error) {
 	filename := url
 	body, err := ioutil.ReadFile("resources/"+filename)
 	if err != nil {
-	    return nil, err
+		return nil, err
 	}
 	return &Pages{Url: url, Body: body}, nil
 }

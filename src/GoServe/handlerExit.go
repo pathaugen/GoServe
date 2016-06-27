@@ -11,7 +11,7 @@ import (
 )
 
 
-func exitHandler() {
+func handlerExit() {
 	//fmt.Print("\n")
 	fmt.Print("Application is exiting. Press [enter] to continue.")
 	fmt.Print("\n\n")

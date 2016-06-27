@@ -113,8 +113,8 @@ func main() {
     
     // Can have multiple servers on different ports by duplicating this code
     server1 := http.NewServeMux()
-    server1.HandleFunc("/", webHandler)
-    server1.HandleFunc("/api/", apiHandler)
+    server1.HandleFunc("/", handlerWeb)
+    server1.HandleFunc("/api/", handlerApi)
     go func() {
 		http.ListenAndServe(":"+port, server1)
     }()
@@ -133,7 +133,7 @@ func main() {
 	
 	// Loop listening for input via inputHandler
 	for !exit {
-		inputHandler()
+		handlerInput()
 	}
 	
 	// If exit is set to true, gracefully exit via this code
@@ -144,7 +144,7 @@ func main() {
 		// Save visitor log file: goserve-visitors.log
 		// xxx
 		
-		exitHandler()
+		handlerExit()
 	}
 }
 

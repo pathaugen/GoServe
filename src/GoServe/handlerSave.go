@@ -8,7 +8,7 @@ import (
 )
 
 
-func saveHandler() (bool) {
+func handlerSave() (bool) {
 	return false
 }
 

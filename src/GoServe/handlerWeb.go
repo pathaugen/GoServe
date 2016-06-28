@@ -107,19 +107,19 @@ func handlerWeb(w http.ResponseWriter, r *http.Request) {
 			    	fmt.Fprintf(w, "<h1>loadPage SAVE</h1><div>%s</div>", string(pageLoaded.Body))
 		    	}
 		    	
-		    } else if extensionRequested == "text" {
+		    } else if extensionRequested == "text" { // TODO
 		    	// Pure text version of page content (rendered as HTML)
 		    	fmt.Fprintf(w, "<h1>loadPage TEXT</h1><div>%s</div>", string(pageLoaded.Body))
 		    	
-		    } else if extensionRequested == "css" {
+		    } else if extensionRequested == "css" { // TODO
 		    	// CSS content for HTML pages
 		    	fmt.Fprintf(w, "<h1>loadPage CSS</h1><div>%s</div>", string(pageLoaded.Body))
 		    	
-		    } else if extensionRequested == "js" {
+		    } else if extensionRequested == "js" { // TODO
 		    	// JS content for HTML pages
 		    	fmt.Fprintf(w, "<h1>loadPage JS</h1><div>%s</div>", string(pageLoaded.Body))
 		    	
-		    } else if extensionRequested == "template" {
+		    } else if extensionRequested == "template" { // TODO
 		    	// Content of template without page content loaded
 		    	fmt.Fprintf(w, "<h1>loadPage TEMPLATE</h1><div>%s</div>", string(pageLoaded.Body))
 		    	
@@ -128,6 +128,8 @@ func handlerWeb(w http.ResponseWriter, r *http.Request) {
 				http.Redirect(w, r, "/"+pageRequested, http.StatusFound) // Redirect to URL without extension
 				
 	    	} else {
+	    		// Display page normally
+	    		
 		    	//fmt.Fprintf(w, "<h1>loadPage</h1><div>%s</div>", string(pageLoaded.Body))
 		    	//fmt.Fprintf(w, templatePageLoad(), string(pageLoaded.Body))
 		    	

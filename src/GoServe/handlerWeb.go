@@ -36,7 +36,7 @@ func handlerWeb(w http.ResponseWriter, r *http.Request) {
 		// Display feedback if monitoring flag is true
 		if monitoringRequests {
 			//fmt.Print("\n")
-			fmt.Print("function webHandler triggered: ", pageRequested) // http://localhost:8080/parentfolder/subfolder/file.ext
+			fmt.Print("port:[XXXX] function webHandler triggered: /", r.URL.Path[1:]) // http://localhost:8080/parentfolder/subfolder/file.ext
 			fmt.Print("\n")
 		}
 		

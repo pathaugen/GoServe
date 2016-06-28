@@ -15,6 +15,27 @@ GoServe! was started as an open source version of enterprise features used in va
 
 GoServe! was created for friends and the community as a whole to quickly spin up a single static website, or scale to entire webhosts.
 
+GoServe! is perfect in the education field teaching HTML/CSS/JS with zero need for platform dependant server setup. Focus on the content your students develop, not the setup.
+
+If you are using GoServe! in your company or organization, add to the list and any details you wish to provide!
+https://github.com/pathaugen/GoServe/wiki/Those-Using-GoServe!
+
+***
+
+Quick Start
+-----------
+
+ 1. Download latest release of GoServe! for your platform (OSX, Unix, Linux, Windows)
+    * https://github.com/pathaugen/GoServe/releases
+ 2. Launch Binary/Executable
+ 3. In the GoServe! console, listen on a port by typing this example:
+    * > listen 8080
+ 4. Open any web browser and visit:
+    * http://localhost:8080/ (from the same machine)
+    * http://[ip-address]:8080/ (from another machine)
+      * If the machine IP is 10.0.1.15:
+        * http://10.0.1.15:8080/
+
 ***
 
 Features

@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"os"
 	//"strings"
-	"net/http"
+	//"net/http"
 	
 	//"github.com/fatih/color"
 	//"external/color-master"
@@ -27,7 +27,7 @@ var exit				bool	= false
 var version				string	= "1.0.0"
 var monitoringRequests	bool	= false		// Console based traffic monitoring switch (configured via flag or console)
 var monitoringActive	bool	= false		// Console based active user monitoring switch (configured via flag or console)
-var port				string	= "8080"	// Port to serve web requests on (configured via flag or console)
+//var port				string	= "8080"	// Port to serve web requests on (configured via flag or console)
 var resourcesLocation	string	= ""		// e.g. goserve-resources/port-8080/localhost/
 // ========== ========== ========== ========== ==========
 
@@ -88,35 +88,6 @@ func main() {
 	fmt.Print("		Exit the application.")
 	fmt.Print("\n\n")
 	// ========== ========== ========== ========== ==========
-	
-	
-	// ========== ========== ========== ========== ==========
-	// Multiple webservers can be created and started
-	// > webserver list -> List all running webservers
-	// > webserver start 8080 -> Start a webserver on the specified port
-	// webservers.cfg -> configuration file with webservers that will be run on startup
-	fmt.Print("Starting Webserver on port "+port+".. please wait..")
-	fmt.Print("\n")
-	//http.HandleFunc("/", handler)
-    //http.ListenAndServe(":8080", nil)
-    
-    // Can have multiple servers on different ports by duplicating this code
-    resourcesLocation = "" // Set the resourcesLocation for this server and domain
-    server1 := http.NewServeMux()
-    server1.HandleFunc("/", handlerWeb)
-    server1.HandleFunc("/api/", handlerApi)
-    go func() {
-		http.ListenAndServe(":"+port, server1)
-    }()
-    
-    fmt.Fprintf(consoleColor, "\x1b[32m\x1b[1m") // Green, bold
-	fmt.Print("SUCCESS: Webserver STARTED on port "+port)
-	fmt.Fprintf(consoleColor, "\x1b[0m") // Reset colors, bold
-	fmt.Print("\n")
-	fmt.Print("Visit: http://localhost:"+port)
-	fmt.Print("\n\n")
-	// ========== ========== ========== ========== ==========
-	
 	
 	// Every 10 seconds save log files
 	// xxx

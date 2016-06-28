@@ -26,7 +26,7 @@ type Templates struct {
 
 type Pages struct {
 	//Domain		string
-	Url			string
+	Url			string // e.g. /path/to/content (sans extension)
 	//Title		string
 	Body		[]byte
 	Css			[]byte
@@ -44,8 +44,8 @@ func (p *Pages) save() error {
 }
 func loadPage(url string) (*Pages, error) {
 	//filename := title + ".txt" // .html, .txt, or .md options
-	filename := url
-	body, err := ioutil.ReadFile("resources/"+filename)
+	filename := convUrlToFilename(url)
+	body, err := ioutil.ReadFile("resources/"+filename+".txt")
 	if err != nil {
 		return nil, err
 	}

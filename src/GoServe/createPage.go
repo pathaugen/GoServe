@@ -28,6 +28,8 @@ func createPage(pageRequested string) (string) {
     //fmt.Fprintf(w, "<div>Page (%s) Created!</div>", urlToFilename(pageRequested))
     output += "<div>Page ("+convUrlToFilename(pageRequested)+") Created!</div>"
     
+    output += "<div>Visit new page at: <a href=\"/"+pageRequested+"\">/"+pageRequested+"</a></div>"
+    
 	return output
 }
 

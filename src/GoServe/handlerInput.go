@@ -20,7 +20,7 @@ func handlerInput() {
 	consoleColor := ansicolor.NewAnsiColorWriter(os.Stdout) // Initialize Windows 10 console coloring
 	
 	// Command prompt
-	if !monitoring {
+	if !monitoringRequests {
 		//fmt.Print("Enter a command ('exit' to exit) > ")
 		fmt.Fprintf(consoleColor, "\x1b[33m\x1b[1m") // Yellow, bold
 		fmt.Print("GoServe! [DATETIME] > ")
@@ -37,7 +37,7 @@ func handlerInput() {
 	// TODO: Strip '/', '-', '- ' off the start of the string: /help, -help, etc.
 	
 	if input == "" {
-		if !monitoring {
+		if !monitoringRequests {
 			//fmt.Print("\n")
 			fmt.Fprintf(consoleColor, "\x1b[31m\x1b[1m") // Red, bold
 			fmt.Print("Command not found.")
@@ -48,7 +48,7 @@ func handlerInput() {
 			fmt.Print("GoServe! Web Traffic Monitoring STOPPING..")
 			fmt.Print("\n")
 			
-			monitoring = false
+			monitoringRequests = false
 			
 			fmt.Fprintf(consoleColor, "\x1b[31m\x1b[1m") // Red, bold
 			fmt.Print("GoServe! Web Traffic Monitoring STOPPED.")
@@ -65,10 +65,21 @@ func handlerInput() {
 		fmt.Print("GoServe! Web Traffic Monitoring STARTING..")
 		fmt.Print("\n")
 		
-		monitoring = true
+		monitoringRequests = true
 		
 		fmt.Fprintf(consoleColor, "\x1b[32m\x1b[1m") // Green, bold
 		fmt.Print("GoServe! Web Traffic Monitoring STARTED.")
+		fmt.Fprintf(consoleColor, "\x1b[0m") // Reset colors, bold
+		fmt.Print(" (Press [ENTER] at any time to stop monitoring)")
+		fmt.Print("\n\n")
+	} else if input == "active" {
+		fmt.Print("GoServe! Active User Monitoring STARTING..")
+		fmt.Print("\n")
+		
+		monitoringActive = true
+		
+		fmt.Fprintf(consoleColor, "\x1b[32m\x1b[1m") // Green, bold
+		fmt.Print("GoServe! Active User Monitoring STARTED.")
 		fmt.Fprintf(consoleColor, "\x1b[0m") // Reset colors, bold
 		fmt.Print(" (Press [ENTER] at any time to stop monitoring)")
 		fmt.Print("\n\n")

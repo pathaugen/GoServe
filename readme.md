@@ -45,10 +45,22 @@ Features
    * **Console Controls**
  	 * Full console controlling on all platforms (Unix/Linux/Windows)
  	 * Full monitoring via console command: **monitor**
+ 	 * Full monitoring of active users via console command: **active**
    * Form based administration and editing of all templates: /templates
      * Full form editing of HTML, CSS, JS for each template
    * Form based editing of all page data via extension: **.edit**
      * HTML content also includes administration of CSS and JS per page
+ * **API**
+   * API endpoints baked into the website URLs themselves via dot notation
+     * .create
+     * .edit
+     * .save
+     * .text
+     * .md
+     * .html
+     * .css
+     * .js
+     * .template
 
 ***
 

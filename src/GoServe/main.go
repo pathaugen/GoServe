@@ -23,10 +23,12 @@ import (
 
 // ========== ========== ========== ========== ==========
 // Variables spanning across all .go files and functions in application
-var exit		bool	= false
-var version		string	= "1.0.0"
-var monitoring	bool	= false		// Console based traffic monitoring switch (configured via flag or console)
-var port		string	= "8080"	// Port to serve web requests on (configured via flag or console)
+var exit				bool	= false
+var version				string	= "1.0.0"
+var monitoringRequests	bool	= false		// Console based traffic monitoring switch (configured via flag or console)
+var monitoringActive	bool	= false		// Console based active user monitoring switch (configured via flag or console)
+var port				string	= "8080"	// Port to serve web requests on (configured via flag or console)
+var resourcesLocation	string	= ""		// e.g. goserve-resources/port-8080/localhost/
 // ========== ========== ========== ========== ==========
 
 
@@ -99,6 +101,7 @@ func main() {
     //http.ListenAndServe(":8080", nil)
     
     // Can have multiple servers on different ports by duplicating this code
+    resourcesLocation = "" // Set the resourcesLocation for this server and domain
     server1 := http.NewServeMux()
     server1.HandleFunc("/", handlerWeb)
     server1.HandleFunc("/api/", handlerApi)

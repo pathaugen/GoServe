@@ -36,7 +36,9 @@ func handlerInput() {
 	input = strings.TrimSpace(input)
 	// TODO: Strip '/', '-', '- ' off the start of the string: /help, -help, etc.
 	
+	
 	if input == "" {
+		
 		if !monitoringRequests {
 			//fmt.Print("\n")
 			fmt.Fprintf(consoleColor, "\x1b[31m\x1b[1m") // Red, bold
@@ -55,12 +57,20 @@ func handlerInput() {
 			fmt.Fprintf(consoleColor, "\x1b[0m") // Reset colors, bold
 			fmt.Print("\n\n")
 		}
+		
 	} else if input == "exit" {
 		exit = true
+		
 	} else if input == "help" || input == "?" {
 		//fmt.Print("\n")
 		fmt.Print("GoServe! Help Pages")
 		fmt.Print("\n\n")
+		
+	} else if input == "listen" { // TODO: Add port number
+		// Start listening on a port
+		listenPort := "8080"
+		startWebServer(listenPort)
+		
 	} else if input == "monitor" {
 		fmt.Print("GoServe! Web Traffic Monitoring STARTING..")
 		fmt.Print("\n")
@@ -72,6 +82,7 @@ func handlerInput() {
 		fmt.Fprintf(consoleColor, "\x1b[0m") // Reset colors, bold
 		fmt.Print(" (Press [ENTER] at any time to stop monitoring)")
 		fmt.Print("\n\n")
+		
 	} else if input == "active" {
 		fmt.Print("GoServe! Active User Monitoring STARTING..")
 		fmt.Print("\n")
@@ -83,6 +94,7 @@ func handlerInput() {
 		fmt.Fprintf(consoleColor, "\x1b[0m") // Reset colors, bold
 		fmt.Print(" (Press [ENTER] at any time to stop monitoring)")
 		fmt.Print("\n\n")
+		
 	} else {
 		//fmt.Print("\n")
 		fmt.Print("Command entered : ")

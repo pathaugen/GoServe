@@ -1,9 +1,12 @@
 
 
-GoServe (CURRENTLY IN DEV)
-=======
+GoServe!
+========
+v1.0.0-alpha (CURRENTLY IN DEV)
 
-**GoServe! is a cross platform simple yet powerful static website server that is fully standalone, contained in a single binary, and enables quick website deployment and serving.**
+**GoServe! is a simple to use and powerful cross platform web server that is fully standalone.**
+
+The entire web stack is contained in a single binary, and enables quick web deployment and powerful web serving capabilities.
 
 **Platforms:**
 OSX, Unix, Linux, Windows
@@ -11,14 +14,19 @@ OSX, Unix, Linux, Windows
 **Fully Standalone:**
 Doesn't require Apache, NGINX, or anything other than the single GoServe! binary
 
-GoServe! was started as an open source version of enterprise features used in various large companies serving single or multiple websites internally and externally.
+GoServe! was started as an open source version of enterprise features used in various large companies serving single or multiple web projects both internally and externally.
 
-GoServe! was created for friends and the community as a whole to quickly spin up a single static website, or scale to entire webhosts.
+GoServe! was created for friends, and the community as a whole, to quickly spin up projects ranging from a single static website, to enterprise scale for entire webhosts.
 
-GoServe! is perfect in the education field teaching HTML/CSS/JS with zero need for platform dependant server setup. Focus on the content your students develop, not the setup.
+GoServe! is perfect in the education field, mainly those teaching HTML/CSS/JS, with zero need for platform dependant server setup. Focus on the content your students are learning and developing, instead of them getting lost and frustrated in the setup process.
 
-If you are using GoServe! in your company or organization, add to the list and any details you wish to provide!
+For more information on GoServe! in education, view the education specific wiki documentation:
+https://github.com/pathaugen/GoServe/wiki/GoServe!-in-Education
+
+If you are using GoServe! in your company or organization, please consider adding them to the list and any details you wish to provide!
 https://github.com/pathaugen/GoServe/wiki/Those-Using-GoServe!
+
+Thank you from the GoServe! [team](https://github.com/pathaugen/GoServe/wiki/Team)
 
 ***
 
@@ -31,10 +39,13 @@ Quick Start
  3. In the GoServe! console, listen on a port by typing this example:
     * > listen 8080
  4. Open any web browser and visit:
-    * http://localhost:8080/ (from the same machine)
+    * [http://localhost:8080/](http://localhost:8080/) (from the same machine)
     * http://[ip-address]:8080/ (from another machine)
       * If the machine IP is 10.0.1.15:
         * http://10.0.1.15:8080/
+
+**For more information and full documentation, view the wiki:**
+https://github.com/pathaugen/GoServe/wiki
 
 ***
 

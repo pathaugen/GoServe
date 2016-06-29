@@ -16,6 +16,9 @@ func startWebServer(serverPort string) (bool) {
 	
 	consoleColor := ansicolor.NewAnsiColorWriter(os.Stdout) // Initialize Windows 10 console coloring
 	
+	// Save settings to .cfg file for auto-resume
+	// xxx
+	
 	// ========== ========== ========== ========== ==========
 	// Multiple webservers can be created and started
 	// > webserver list -> List all running webservers

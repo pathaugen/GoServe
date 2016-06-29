@@ -29,6 +29,7 @@ var monitoringRequests	bool	= false		// Console based traffic monitoring switch 
 var monitoringActive	bool	= false		// Console based active user monitoring switch (configured via flag or console)
 //var port				string	= "8080"	// Port to serve web requests on (configured via flag or console)
 var resourcesLocation	string	= ""		// e.g. goserve-resources/port-8080/localhost/
+var adminPasswordHash	string	= ""		// MD5 Hashed admin password pulled from .cfg on load or prompts at runtime		
 // ========== ========== ========== ========== ==========
 
 
@@ -89,8 +90,15 @@ func main() {
 	fmt.Print("\n\n")
 	// ========== ========== ========== ========== ==========
 	
-	// Every 10 seconds save log files
+	
+	// Read .cfg file and parse, resume from where left off
 	// xxx
+	
+	
+	// Every 10 seconds save log files
+	// goserve-activity.log -> load file into log buffer, dump log buffer
+	// goserve-commands.log
+	
 	
 	// Loop listening for input via inputHandler
 	for !exit {

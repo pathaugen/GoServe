@@ -15,6 +15,7 @@ import (
 	"GoServe/external/go-thrust-master/lib/dispatcher"
 	"GoServe/external/go-thrust-master/lib/spawn"
 	"GoServe/external/go-thrust-master/lib/bindings/window"
+	"GoServe/external/go-thrust-master/lib/commands"
 )
 
 
@@ -79,7 +80,8 @@ func handlerInput() {
 		// Start Chrome based GUI
 		spawn.Run()
 		//thrustWindow := window.NewWindow("http://breach.cc/", nil)
-		thrustOptions := window.Options{RootUrl:"http://localhost:8080/"} // Size:"SizeHW{Width:1024,Height:768}"
+		thrustSize := commands.SizeHW{Width:1024, Height: 768}
+		thrustOptions := window.Options{RootUrl:"http://localhost:8080/", Size: thrustSize} // Size:"SizeHW{Width:1024,Height:768}"
 		thrustWindow := window.NewWindow(thrustOptions) // Have to send options
 		thrustWindow.Show()
 		//thrustWindow.Maximize()

@@ -2,7 +2,8 @@
 
 GoServe!
 ========
-v1.0.0-alpha (CURRENTLY IN DEV)
+v1.0.0-alpha-4 (CURRENTLY IN DEV)
+v1.0.0-alpha-3 Launched for testing (New GUI)
 
 **GoServe! is a simple to use and powerful cross platform web server that is fully standalone.**
 

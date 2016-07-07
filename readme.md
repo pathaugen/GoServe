@@ -104,6 +104,46 @@ External Libraries
    * Commit included: https://github.com/shiena/ansicolor/commit/a422bbe96644373c5753384a59d678f7d261ff10
    * License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
    * Description: Coloring of command prompt, including Windows 10.
+ * **GoThrust**
+   * Source: https://github.com/miketheprogrammer/go-thrust
+   * Commit included: https://github.com/miketheprogrammer/go-thrust/commit/92e66a5b9de59b0c0e07ced3a964135ddcdeb883
+   * License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
+   * Description: Chromium-based cross-platform / cross-language application framework.
+ * **cli** (Dependency of GoThrust)
+   * Source: https://github.com/urfave/cli
+   * Commit included: https://github.com/urfave/cli/commit/1efa31f08b9333f1bd4882d61f9d668a70cd902e
+   * License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
+   * Description: A simple, fast, and fun package for building command line apps in Go.
+ * **yaml** (Dependency of cli)
+   * Source: https://github.com/go-yaml/yaml/tree/v2
+   * Commit included: https://github.com/go-yaml/yaml/commit/a83829b6f1293c91addabc89d0571c246397bbf4
+   * License: https://github.com/go-yaml/yaml/blob/v2/LICENSE
+   * Description: YAML support for the Go language.
+ * **pb** (Dependency of GoThrust)
+   * Source: https://github.com/cheggaaa/pb
+   * Commit included: https://github.com/cheggaaa/pb/commit/04b234c80d661c663dbcebd52fc7218fdacc6d0c
+   * License: https://github.com/cheggaaa/pb/blob/master/LICENSE
+   * Description: Console progress bar for Golang
+ * **websocket** (Dependency of GoThrust)
+   * Source: https://github.com/gorilla/websocket
+   * Commit included: https://github.com/gorilla/websocket/commit/54f9decdbfb3fe254c5df3d5aa234480989f4af0
+   * License: https://github.com/gorilla/websocket/blob/master/LICENSE
+   * Description: A WebSocket implementation for Go.
+ * **birpc** (Dependency of GoThrust)
+   * Source: https://github.com/tv42/birpc
+   * Commit included: https://github.com/tv42/birpc/commit/22dcbfff0024e83a23cb42c800c1523a3ba08a4c
+   * License: https://github.com/tv42/birpc/blob/master/LICENSE
+   * Description: Bi-directional RPC library for Go, including JSON-over-WebSocket.
+ * **topic** (Dependency of birpc)
+   * Source: https://github.com/tv42/topic
+   * Commit included: https://github.com/tv42/topic/commit/aa72cbe81b4823f349da47a4d749cdda61677c09
+   * License: https://github.com/tv42/topic/blob/master/LICENSE
+   * Description: Go library for in-process single-topic pub-sub.
+ * **profile** (Dependency of GoThrust)
+   * Source: https://github.com/pkg/profile
+   * Commit included: https://github.com/pkg/profile/commit/8a808a6967b79da66deacfe508b26d398a69518f
+   * License: https://github.com/pkg/profile/blob/master/LICENSE
+   * Description: Simple profiling for Go.
 
 ***
 

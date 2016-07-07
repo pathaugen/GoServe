@@ -10,6 +10,12 @@ import (
 	"strings"
 	
 	"GoServe/external/ansicolor-master"
+	
+	// Chromium GUI
+	"GoServe/external/go-thrust-master/lib/dispatcher"
+	"GoServe/external/go-thrust-master/lib/spawn"
+	"GoServe/external/go-thrust-master/lib/bindings/window"
+	"GoServe/external/go-thrust-master/lib/commands"
 )
 
 
@@ -46,7 +52,7 @@ func handlerInput() {
 			fmt.Fprintf(consoleColor, "\x1b[0m") // Reset colors, bold
 			fmt.Print(" 'help' for a list of commands.")
 			fmt.Print("\n\n")
-		} else {
+		} else { // TODO: Stop "active" and "monitor" status separatly
 			fmt.Print("GoServe! Web Traffic Monitoring STOPPING..")
 			fmt.Print("\n")
 			
@@ -70,6 +76,19 @@ func handlerInput() {
 		// Start listening on a port
 		listenPort := "8080"
 		startWebServer(listenPort)
+		
+		// Start Chrome based GUI
+		spawn.Run()
+		//thrustWindow := window.NewWindow("http://breach.cc/", nil)
+		thrustSize := commands.SizeHW{Width:1024, Height: 768}
+		thrustOptions := window.Options{RootUrl:"http://localhost:8080/", Size: thrustSize} // Size:"SizeHW{Width:1024,Height:768}"
+		thrustWindow := window.NewWindow(thrustOptions) // Have to send options
+		thrustWindow.Show()
+		//thrustWindow.Maximize()
+		thrustWindow.Focus()
+	    go func() {
+			dispatcher.RunLoop()
+	    }()
 		
 	} else if input == "monitor" {
 		fmt.Print("GoServe! Web Traffic Monitoring STARTING..")

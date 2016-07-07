@@ -109,41 +109,41 @@ External Libraries
    * Commit included: https://github.com/miketheprogrammer/go-thrust/commit/92e66a5b9de59b0c0e07ced3a964135ddcdeb883
    * License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
    * Description: Chromium-based cross-platform / cross-language application framework.
- * **cli** (Dependency of GoThrust)
-   * Source: https://github.com/urfave/cli
-   * Commit included: https://github.com/urfave/cli/commit/1efa31f08b9333f1bd4882d61f9d668a70cd902e
-   * License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
-   * Description: A simple, fast, and fun package for building command line apps in Go.
- * **yaml** (Dependency of cli)
-   * Source: https://github.com/go-yaml/yaml/tree/v2
-   * Commit included: https://github.com/go-yaml/yaml/commit/a83829b6f1293c91addabc89d0571c246397bbf4
-   * License: https://github.com/go-yaml/yaml/blob/v2/LICENSE
-   * Description: YAML support for the Go language.
- * **pb** (Dependency of GoThrust)
-   * Source: https://github.com/cheggaaa/pb
-   * Commit included: https://github.com/cheggaaa/pb/commit/04b234c80d661c663dbcebd52fc7218fdacc6d0c
-   * License: https://github.com/cheggaaa/pb/blob/master/LICENSE
-   * Description: Console progress bar for Golang
- * **websocket** (Dependency of GoThrust)
-   * Source: https://github.com/gorilla/websocket
-   * Commit included: https://github.com/gorilla/websocket/commit/54f9decdbfb3fe254c5df3d5aa234480989f4af0
-   * License: https://github.com/gorilla/websocket/blob/master/LICENSE
-   * Description: A WebSocket implementation for Go.
- * **birpc** (Dependency of GoThrust)
-   * Source: https://github.com/tv42/birpc
-   * Commit included: https://github.com/tv42/birpc/commit/22dcbfff0024e83a23cb42c800c1523a3ba08a4c
-   * License: https://github.com/tv42/birpc/blob/master/LICENSE
-   * Description: Bi-directional RPC library for Go, including JSON-over-WebSocket.
- * **topic** (Dependency of birpc)
-   * Source: https://github.com/tv42/topic
-   * Commit included: https://github.com/tv42/topic/commit/aa72cbe81b4823f349da47a4d749cdda61677c09
-   * License: https://github.com/tv42/topic/blob/master/LICENSE
-   * Description: Go library for in-process single-topic pub-sub.
- * **profile** (Dependency of GoThrust)
-   * Source: https://github.com/pkg/profile
-   * Commit included: https://github.com/pkg/profile/commit/8a808a6967b79da66deacfe508b26d398a69518f
-   * License: https://github.com/pkg/profile/blob/master/LICENSE
-   * Description: Simple profiling for Go.
+   * **profile** (Dependency of GoThrust)
+     * Source: https://github.com/pkg/profile
+     * Commit included: https://github.com/pkg/profile/commit/8a808a6967b79da66deacfe508b26d398a69518f
+     * License: https://github.com/pkg/profile/blob/master/LICENSE
+     * Description: Simple profiling for Go.
+   * **pb** (Dependency of GoThrust)
+     * Source: https://github.com/cheggaaa/pb
+     * Commit included: https://github.com/cheggaaa/pb/commit/04b234c80d661c663dbcebd52fc7218fdacc6d0c
+     * License: https://github.com/cheggaaa/pb/blob/master/LICENSE
+     * Description: Console progress bar for Golang
+   * **websocket** (Dependency of GoThrust)
+     * Source: https://github.com/gorilla/websocket
+     * Commit included: https://github.com/gorilla/websocket/commit/54f9decdbfb3fe254c5df3d5aa234480989f4af0
+     * License: https://github.com/gorilla/websocket/blob/master/LICENSE
+     * Description: A WebSocket implementation for Go.
+   * **cli** (Dependency of GoThrust)
+     * Source: https://github.com/urfave/cli
+     * Commit included: https://github.com/urfave/cli/commit/1efa31f08b9333f1bd4882d61f9d668a70cd902e
+     * License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
+     * Description: A simple, fast, and fun package for building command line apps in Go.
+     * **yaml** (Dependency of cli)
+       * Source: https://github.com/go-yaml/yaml/tree/v2
+       * Commit included: https://github.com/go-yaml/yaml/commit/a83829b6f1293c91addabc89d0571c246397bbf4
+       * License: https://github.com/go-yaml/yaml/blob/v2/LICENSE
+       * Description: YAML support for the Go language.
+   * **birpc** (Dependency of GoThrust)
+     * Source: https://github.com/tv42/birpc
+     * Commit included: https://github.com/tv42/birpc/commit/22dcbfff0024e83a23cb42c800c1523a3ba08a4c
+     * License: https://github.com/tv42/birpc/blob/master/LICENSE
+     * Description: Bi-directional RPC library for Go, including JSON-over-WebSocket.
+     * **topic** (Dependency of birpc)
+       * Source: https://github.com/tv42/topic
+       * Commit included: https://github.com/tv42/topic/commit/aa72cbe81b4823f349da47a4d749cdda61677c09
+       * License: https://github.com/tv42/topic/blob/master/LICENSE
+       * Description: Go library for in-process single-topic pub-sub.
 
 ***
 
@@ -154,15 +154,15 @@ External Libraries (No Longer Used)
    * Source: https://github.com/fatih/color
    * Commit included: https://github.com/fatih/color/commit/87d4004f2ab62d0d255e0a38f1680aa534549fe3
    * License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
- * **go-colorable** (Dependency of Color)
-   * Source: https://github.com/mattn/go-colorable
-   * Commit included: https://github.com/mattn/go-colorable/commit/9056b7a9f2d1f2d96498d6d146acd1f9d5ed3d59
-   * License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
-   * Description: Windows coloring of command line.
- * **go-isatty** (Dependency of Color)
-   * Source: https://github.com/mattn/go-isatty
-   * Commit included: https://github.com/mattn/go-isatty/commit/56b76bdf51f7708750eac80fa38b952bb9f32639
-   * License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
+   * **go-colorable** (Dependency of Color)
+     * Source: https://github.com/mattn/go-colorable
+     * Commit included: https://github.com/mattn/go-colorable/commit/9056b7a9f2d1f2d96498d6d146acd1f9d5ed3d59
+     * License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
+     * Description: Windows coloring of command line.
+   * **go-isatty** (Dependency of Color)
+     * Source: https://github.com/mattn/go-isatty
+     * Commit included: https://github.com/mattn/go-isatty/commit/56b76bdf51f7708750eac80fa38b952bb9f32639
+     * License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
 
 ***
 

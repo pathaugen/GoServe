@@ -5,17 +5,17 @@
 
 ***
 
-##1.0.0 - YYYY-MM-DD
+## 1.0.0 - YYYY-MM-DD
 
-###Added
-
-* x
-
-###Changed
+### Added
 
 * x
 
-###Fixed
+### Changed
+
+* x
+
+### Fixed
 
 * x
 

@@ -82,9 +82,9 @@ func NewWindow(options Options) *Window {
 		ObjectType: "window",
 		Args: CommandArguments{
 			RootUrl:  w.Url,
-			Title:    spawn.ApplicationName,
+			Title:    options.Title, // spawn.ApplicationName,
 			Size:     size,
-			HasFrame: !options.HasFrame,
+			HasFrame: options.HasFrame, // Reversed this behavior
 			IconPath: options.IconPath,
 		},
 	}

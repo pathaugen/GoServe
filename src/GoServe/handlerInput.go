@@ -9,13 +9,20 @@ import (
 	"os"
 	"strings"
 	
-	"GoServe/external/ansicolor-master"
+	// Switch to Vendoring
+	//"GoServe/external/ansicolor-master"
+	"ansicolor-master"
 	
 	// Chromium GUI
-	"GoServe/external/go-thrust-master/lib/dispatcher"
-	"GoServe/external/go-thrust-master/lib/spawn"
-	"GoServe/external/go-thrust-master/lib/bindings/window"
-	"GoServe/external/go-thrust-master/lib/commands"
+	// Switch to Vendoring
+	//"GoServe/external/go-thrust-master/lib/dispatcher"
+	//"GoServe/external/go-thrust-master/lib/spawn"
+	//"GoServe/external/go-thrust-master/lib/bindings/window"
+	//"GoServe/external/go-thrust-master/lib/commands"
+	"go-thrust-master/lib/dispatcher"
+	"go-thrust-master/lib/spawn"
+	"go-thrust-master/lib/bindings/window"
+	"go-thrust-master/lib/commands"
 )
 
 

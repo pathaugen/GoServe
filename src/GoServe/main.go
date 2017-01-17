@@ -15,7 +15,9 @@ import (
 	//"GoServe/external/color-master"
 	//"GoServe/external/go-colorable-master"
 	
-	"GoServe/external/ansicolor-master"
+	// Switch to Vendoring
+	//"GoServe/external/ansicolor-master"
+	"ansicolor-master"
 	
 	//"GoServe/handlers"
 	

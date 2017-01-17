@@ -100,6 +100,10 @@ Features
 External Libraries
 ------------------
 
+Migrated from /external to /vendor per Vendor changes to Golang 1.6:
+<https://golang.org/cmd/go/#hdr-Vendor_Directories>
+<https://docs.google.com/document/d/1Bz5-UB7g2uPBdOx-rw5t9MxJwkfpx90cqG9AFL0JAYo>
+
  * **ansicolor**
    * Source: <https://github.com/shiena/ansicolor>
    * Commit included: <https://github.com/shiena/ansicolor/commit/a422bbe96644373c5753384a59d678f7d261ff10>
@@ -170,6 +174,7 @@ External Libraries (No Longer Used)
 v1.0.0 (UNRELEASED)
 ------
 
+ * Added:
  * Major Changes:
  * Minor Changes:
  * Bugs Fixed:

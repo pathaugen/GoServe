@@ -8,7 +8,9 @@ import (
 	"fmt"
 	"net/http"
 	
-	"GoServe/external/ansicolor-master"
+	// Switch to Vendoring
+	//"GoServe/external/ansicolor-master"
+	"ansicolor-master"
 )
 
 

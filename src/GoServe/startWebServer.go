@@ -10,7 +10,7 @@ import (
 	
 	// Switch to Vendoring
 	//"GoServe/external/ansicolor-master"
-	"ansicolor-master"
+	"ansicolor"
 )
 
 

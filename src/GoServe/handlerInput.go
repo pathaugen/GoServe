@@ -9,13 +9,20 @@ import (
 	"os"
 	"strings"
 	
-	"GoServe/external/ansicolor-master"
+	// Switch to Vendoring
+	//"GoServe/external/ansicolor-master"
+	"ansicolor"
 	
 	// Chromium GUI
-	"GoServe/external/go-thrust-master/lib/dispatcher"
-	"GoServe/external/go-thrust-master/lib/spawn"
-	"GoServe/external/go-thrust-master/lib/bindings/window"
-	"GoServe/external/go-thrust-master/lib/commands"
+	// Switch to Vendoring
+	//"GoServe/external/go-thrust-master/lib/dispatcher"
+	//"GoServe/external/go-thrust-master/lib/spawn"
+	//"GoServe/external/go-thrust-master/lib/bindings/window"
+	//"GoServe/external/go-thrust-master/lib/commands"
+	"go-thrust/lib/dispatcher"
+	"go-thrust/lib/spawn"
+	"go-thrust/lib/bindings/window"
+	"go-thrust/lib/commands"
 )
 
 
@@ -79,10 +86,17 @@ func handlerInput() {
 		
 		// Start Chrome based GUI
 		spawn.Run()
-		//thrustWindow := window.NewWindow("http://breach.cc/", nil)
-		thrustSize := commands.SizeHW{Width:1024, Height: 768}
-		thrustOptions := window.Options{RootUrl:"http://localhost:8080/", Size: thrustSize} // Size:"SizeHW{Width:1024,Height:768}"
-		thrustWindow := window.NewWindow(thrustOptions) // Have to send options
+		//thrustWindow	:= window.NewWindow("http://breach.cc/", nil)
+		thrustUrl		:= "http://localhost:8080/"
+		thrustSize		:= commands.SizeHW{Width:1024, Height: 768}
+		thrustTitle		:= "GoServe!"
+		thrustOptions	:= window.Options{
+			RootUrl:	thrustUrl,
+			Size:		thrustSize,
+			Title:		thrustTitle,
+			//IconPath:	""
+			HasFrame:	true} // Size:"SizeHW{Width:1024,Height:768}"
+		thrustWindow	:= window.NewWindow(thrustOptions) // Have to send options
 		thrustWindow.Show()
 		//thrustWindow.Maximize()
 		thrustWindow.Focus()

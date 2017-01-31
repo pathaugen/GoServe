@@ -2,6 +2,11 @@
 
 GoServe!
 ========
+
+[![Build Status](https://travis-ci.org/pathaugen/GoServe.svg?branch=master)](https://travis-ci.org/pathaugen/GoServe)
+[![CircleCI](https://circleci.com/gh/pathaugen/GoServe.svg?style=shield)](https://circleci.com/gh/pathaugen/GoServe)
+[![Build status](https://ci.appveyor.com/api/projects/status/hu4y4si5pxcjlac4?svg=true)](https://ci.appveyor.com/project/PatrickHaugen/goserve)
+
 v1.0.0-alpha-4 (CURRENTLY IN DEV)
 v1.0.0-alpha-3 Launched for testing (New GUI)
 

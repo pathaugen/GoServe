@@ -6,6 +6,7 @@ GoServe!
 [![Build Status](https://travis-ci.org/pathaugen/GoServe.svg?branch=master)](https://travis-ci.org/pathaugen/GoServe)
 [![CircleCI](https://circleci.com/gh/pathaugen/GoServe.svg?style=shield)](https://circleci.com/gh/pathaugen/GoServe)
 [![Build status](https://ci.appveyor.com/api/projects/status/hu4y4si5pxcjlac4?svg=true)](https://ci.appveyor.com/project/PatrickHaugen/goserve)
+
 [![Code Climate](https://codeclimate.com/github/pathaugen/GoServe/badges/gpa.svg)](https://codeclimate.com/github/pathaugen/GoServe)
 [![Test Coverage](https://codeclimate.com/github/pathaugen/GoServe/badges/coverage.svg)](https://codeclimate.com/github/pathaugen/GoServe/coverage)
 [![Issue Count](https://codeclimate.com/github/pathaugen/GoServe/badges/issue_count.svg)](https://codeclimate.com/github/pathaugen/GoServe)
@@ -37,7 +38,13 @@ If you are using GoServe! in your company or organization, please consider addin
 
 Thank you from the GoServe! [team](https://github.com/pathaugen/GoServe/wiki/Team)
 
-***
+* Code publicly hosted on GitHub: <https://github.com/pathaugen/unimon>
+* Travis CI for builds: <https://travis-ci.org/pathaugen/GoServe>
+* Circle CI for builds: <https://circleci.com/gh/pathaugen/GoServe>
+* AppVeyor for builds: <https://ci.appveyor.com/project/PatrickHaugen/goserve>
+* Code Climate: <https://codeclimate.com/github/pathaugen/GoServe>
+
+---------- ---------- ---------- ---------- ----------
 
 Quick Start
 -----------
@@ -56,10 +63,10 @@ Quick Start
 **For more information and full documentation, view the wiki:**
 <https://github.com/pathaugen/GoServe/wiki>
 
-***
+---------- ---------- ---------- ---------- ----------
 
-Features
---------
+Feature List
+------------
 
  * **Multiple Server and Domain Support**
    * Power of a large webhost in a single binary
@@ -103,7 +110,7 @@ Features
      * .js
      * .template
 
-***
+---------- ---------- ---------- ---------- ----------
 
 External Libraries
 ------------------
@@ -158,7 +165,7 @@ Migrated from /external to /vendor per Vendor changes to Golang 1.6:
        * License: <https://github.com/tv42/topic/blob/master/LICENSE>
        * Description: Go library for in-process single-topic pub-sub.
 
-***
+---------- ---------- ---------- ---------- ----------
 
 External Libraries (No Longer Used)
 -----------------------------------
@@ -173,11 +180,11 @@ External Libraries (No Longer Used)
      * License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
      * Description: Windows coloring of command line.
    * **go-isatty** (Dependency of Color)
-     * Source: <https://github.com/mattn/go-isatty>
-     * Commit included: <https://github.com/mattn/go-isatty/commit/56b76bdf51f7708750eac80fa38b952bb9f32639>
-     * License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
+    * Source: <https://github.com/mattn/go-isatty>
+    * Commit included: <https://github.com/mattn/go-isatty/commit/56b76bdf51f7708750eac80fa38b952bb9f32639>
+    * License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
 
-***
+---------- ---------- ---------- ---------- ----------
 
 v1.0.0 (UNRELEASED)
 ------
@@ -187,7 +194,7 @@ v1.0.0 (UNRELEASED)
  * Minor Changes:
  * Bugs Fixed:
 
-***
+---------- ---------- ---------- ---------- ----------
 
 License
 -------
